@@ -3,8 +3,6 @@
 ## 메모리 초과 -> sort() 사용으로 인해 발생
 # N = int(input())  # 수의 개수
 # numbers = list(int(input()) for _ in range(N))
-# N = int(input())  # 수의 개수
-# numbers = list(int(input()) for _ in range(N))
 # numbers.sort()
 # for i in range(numbers):
 #     print(i)
@@ -18,11 +16,13 @@
 import sys
 N = int(sys.stdin.readline())
 num_list = [0] * 10001  # 입력으로 받을 수 있는 10,000개의 수 담는 list
+# num_list = [0, 0, 0, 0, 0, 0, ...]
 
 # 입력을 받을 때마다 그 수에 해당하는 인덱스에 +1 해줘서 그 수의 개수 담기
 for i in range(N):
     number = int(sys.stdin.readline())
     num_list[number] += 1
+# num_list = [0, 2, 2, 2, 1, 2, 0, 1, 0, 0, ...]
 
 for i in range(10001):    # list 돌면서
     if num_list[i] != 0:  # 0이 아니라면
