@@ -14,32 +14,14 @@ nums.sort()  # 오름차순으로 정렬
 print(nums[(n-1)//2])
 
 # 3) 최빈값 : n개의 수들 중 가장 많이 나타나는 값
-counts = dict()  # 빈 딕셔너리 생성 / counts = {}
-for i in range(1,n+1):
-    counts[i] = []
-# counts = {1: [], 2: [], 3: [], 4: [], 5: []}
-
-maxCount = 1
-count = 1
-for j in range(1,n):
-	if nums[j] == nums[j-1] :
-		count += 1
-	else :
-		counts[count].append(nums[j-1])
-		if maxCount < count : maxCount = count
-		count = 1
-	if j == n-1 :
-		counts[count].append(nums[j])
-		if maxCount < count : maxCount = count
-
-if n == 1 :
-	counts[1].append(nums[0])
-
-counts[maxCount].sort()
-if len(counts[maxCount]) == 1:
-	print(counts[maxCount][0])
-else :  # 최빈값이 여러 개 있을 경우 -> 최빈값 중 두 번째로 작은 값 출력
-	print(counts[maxCount][1])
+from collections import Counter
+# Counter : 각각 요소 하나하나별로 몇 번씩 나왔는지 count, 자동으로 크기순으로 정렬
+freq = Counter(nums).most_common()
+# freq = [[(-2, 1), (1, 1), (2, 1), (3, 1), (8, 1)]]
+if len(freq) > 1 and freq[0][1] == freq[1][1]:  # 최빈값이 여러 개라면
+    print(freq[1][0])                           # 두 번째로 작은 값 출력
+else:
+    print(freq[0][0])
 
 # 4) 범위 : n개의 수들 중 최댓값과 최소값의 차이
 print(nums[-1]-nums[0])   # 중앙값을 구할 때 nums를 sort() 헀으므로!
