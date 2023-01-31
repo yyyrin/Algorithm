@@ -1,0 +1,45 @@
+<!-- 
+대문자로 이루어진 영어단어가 입력되면 단어에 포함된 'A'를 모두 '#'으로 바꾸어 출력하는 프로그램을 작성하세요.
+
+입력설명
+첫 번째 줄에 문자열이 입력된다.
+
+출력설명
+첫 번째 줄에 바뀐 단어를 출력한다.
+
+입력예제 1
+BANANA
+
+출력예제 1
+B#N#N#
+ -->
+
+ <!-- 정규표현식(Regular Expression)
+ 정해진 규칙을 사용해 모든 문자를 변환
+ 숫자만 변환 or 맨 처음이나 맨 뒤만 변환 가능
+ 
+ str_text.replace(/찾는 문자열/gi, "변경할 문자열")
+ 
+ 나누기(/) 표시 안에 넣는 텍스트의 따옴표는 없어야 함
+ g : 전체 모든 문자열을 변경(global)
+ i : 영문 대소문자를 무시, 모두 일치하는 패턴 검색(ignore) -->
+
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+              let answer = s.replace(/A/gi, '#')
+              return answer
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
