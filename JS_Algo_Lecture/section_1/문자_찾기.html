@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              // 홀수만 뽑아서 저장한 list
+              var odd_list = []
+              for (i=0; i<arr.length; i++) {
+                if (arr[i] % 2 === 1) {
+                  odd_list.push(arr[i])
+                }
+              }
+
+              // 홀수들의 합
+              const answer = odd_list.reduce(function add(sum, curValue) {
+                return sum + curValue
+              }, 0)
+              console.log(answer)
+              
+              // 홀수들 중 최소값
+              odd_list.sort()
+              console.log(odd_list[0])
+            }
+            
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
