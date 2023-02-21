@@ -22,19 +22,11 @@ KoreaTimeGood
   <body>
       <script>
           function solution(s){  
-            var arr = [];
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
-            return answer;
+            let cnt = 0
+            for (let i of s) {
+              if (i === i.toUpperCase()) cnt++
+            }
+            return cnt
           }
 
           let str="KoreaTimeGood";
@@ -42,3 +34,27 @@ KoreaTimeGood
       </script>
   </body>
 </html>
+
+<!-- <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){         
+                let answer=0;
+                for(let x of s){
+                    //let num=x.charCodeAt();
+                    //if(num>=65 && num<=90) answer++;
+                    if(x===x.toUpperCase()) answer++; 
+                }
+
+                return answer;
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html> -->
