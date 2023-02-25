@@ -29,7 +29,13 @@ beautiful
   <body>
     <script>
       function solution(s) {
-        
+        let res = ""
+        for (let i of str) {
+          if (i.length > res.length) {
+            res = i
+          }
+        }
+        return res
       }
       let str = ["teacher", "time", "student", "beautiful", "good"];
       console.log(solution(str));
