@@ -19,16 +19,41 @@ good
 출력예제 2
 oo
  -->
- <html>
+<html>
   <head>
-      <meta charset="UTF-8">
-      <title>출력결과</title>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
   </head>
   <body>
-      <script>
-          function solution(s){  
-          }
-          console.log(solution("study"));
-      </script>
+    <script>
+      function solution(s) {
+        let res = "";
+        if (s.length % 2 === 1) {
+          res = s[Math.floor(s.length / 2)];
+          // Math.floor() : 소수 첫째 자리에서 버림하여 정수로 변환
+        } else {
+          res = s.substr(Math.floor(s.length / 2) - 1, 2);
+          /*
+          1) substr("시작위치", "길이")
+          -> 시작 위치부터 해당 길이만큼 문자열을 자르는 함수
+
+          2) substring("시작위치", "종료위치")
+          -> 시작 위치에서 종료 위치까지 문자열 자르는 함수
+          -> 종류 위치는 -1까지 자른다
+          -> str.substring(-4, 5) = str.substring(0, 5)
+            -> 인자에 음수(-)를 대입하면 해당 값은 "0"으로 치환된다
+          -> str.substring(2, -1) = str.substring(0, 2)
+            -> 종료 위치에 음수(-) 또는 "0"인 경우 첫 번째 인수와 두 번째 인수가 뒤바뀐다
+
+          3) slice("시작위치", "종료위치")
+          -> 기본적인 사용법은 substring() 함수와 동일
+          -> 음수(-)를 자유롭게 사용할 수 있어서 뒤에서부터 문자열을 자를 때 유용하게 사용
+          -> str.slice(-4) : 문자열의 뒤에서 4번째 자리부터 끝까지 문자열을 자른다
+          */
+        }
+        return res;
+      }
+      console.log(solution("good"));
+    </script>
   </body>
 </html>
