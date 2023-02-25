@@ -1,6 +1,6 @@
 <!-- 
 N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하는 프로그램을 작성하세요.
-출력하는 문자열은 원래의 입력순서를 유지합니다.\
+출력하는 문자열은 원래의 입력순서를 유지합니다.
 
 입력설명
 첫 줄에 자연수 N이 주어진다. (3<=N<=30)
@@ -22,17 +22,24 @@ good
 time
 student
  -->
- <html>
+<html>
   <head>
-      <meta charset="UTF-8">
-      <title>출력결과</title>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
   </head>
   <body>
-      <script>
-          function solution(s){  
+    <script>
+      function solution(s) {
+        let res = [];
+        for (i = 0; i < s.length; i++) {
+          if (res.indexOf(s[i]) === -1) {
+            res.push(s[i]);
           }
-          let str=["good", "time", "good", "time", "student"];
-          console.log(solution(str));
-      </script>
+        }
+        return res;
+      }
+      let str = ["good", "time", "good", "time", "student"];
+      console.log(solution(str));
+    </script>
   </body>
 </html>
