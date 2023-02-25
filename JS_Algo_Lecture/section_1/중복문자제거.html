@@ -14,16 +14,31 @@ ksekkset
 출력예제 1
 kset
  -->
- <html>
+<html>
   <head>
-      <meta charset="UTF-8">
-      <title>출력결과</title>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
   </head>
   <body>
-      <script>
-          function solution(s){  
+    <script>
+      function solution(s) {
+        let res = "";
+        for (let i of s) {
+          if (res.indexOf(i) === -1) {
+            /* 
+            str.indexOf(searchvalue, position)
+            - 문자열에서 특정 문자열을 찾고, 검색된 문자열이 '첫번째'로 나타나는 위치 index return
+            - searchvalue : 필수 입력값, 찾을 문자열
+            - postion : optional, 기본값은 0, string에서 searchvalue를 찾기 시작할 위치
+            - 찾는 문자열이 없으면 -1 리턴
+            - 문자열을 찾을 때 대소문자 구분
+            */
+            res = res + i;
           }
-          console.log(solution("ksekkset"));
-      </script>
+        }
+        return res;
+      }
+      console.log(solution("ksekkset"));
+    </script>
   </body>
 </html>
