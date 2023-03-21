@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+              const upperCaseStr = s.toUpperCase()
+              let ans = "YES"
+              for(i=0; i<Math.floor(upperCaseStr.length/2);i++) {
+                if(upperCaseStr[i] !== upperCaseStr[upperCaseStr.length-i-1]) ANS = "NO"
+              }
+              return ans;
+            }
+            
+            let str="gooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
