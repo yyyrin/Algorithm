@@ -1,4 +1,3 @@
 function solution(my_string) {
-  var answer = '';
-  return answer;
+  return my_string.split("").reverse().join("");
 }
