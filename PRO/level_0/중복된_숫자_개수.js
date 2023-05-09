@@ -1,4 +1,4 @@
 function solution(array, n) {
-  let count = array.filter(element => n === element).length;
+  let count = array.filter((element) => n === element).length;
   return count;
 }
