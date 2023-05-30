@@ -6,4 +6,3 @@ function solution(my_string) {
     })
     .join("");
 }
-F;
