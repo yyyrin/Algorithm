@@ -1,13 +1,9 @@
-function solution(a, b) {
-  let ans = 0;
-  if (a <= b) {
-    for (let i = a; i <= b; i++) {
-      ans += i;
-    }
-  } else {
-    for (let i = b; i <= a; i++) {
-      ans += i;
-    }
+function solution(n) {
+  let res = 0;
+  let index = 1;
+  while (index <= n / 2) {
+    if (n % index === 0) res += index;
+    index++;
   }
-  return ans;
+  return res + n;
 }
