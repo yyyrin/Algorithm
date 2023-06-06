@@ -24,3 +24,10 @@ function solution(before, after) {
   }
   return 1;
 }
+
+// 다른 풀이 (정말 간단하다..)
+function solution(before, after) {
+  return before.split("").sort().join("") === after.split("").sort().join("")
+    ? 1
+    : 0;
+}
