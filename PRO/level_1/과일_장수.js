@@ -5,7 +5,7 @@ function solution(k, m, score) {
   for (let i = 0; i < score.length; i += m) {
     // 상자 채워지는 경우
     if (i + m - 1 < score.length) {
-      ans += score.slice(i, i + m)[m - 1] * m;
+      ans += score[i + m - 1] * m;
     } else break; // 상자 채워지지 않는 경우
   }
 
