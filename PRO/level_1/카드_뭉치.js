@@ -10,3 +10,5 @@ function solution(cards1, cards2, goal) {
 
   return "Yes";
 }
+
+// 인덱스 값을 계속 더해주는 방식말고 shift()를 사용하는 방법도 있음
