@@ -40,6 +40,5 @@ if (request.reduce((acc, cur) => acc + cur, 0) <= M) {
 
 // 모든 요청이 배정될 수 없는 경우
 else {
-  let limit = binarySearch(0, maxRequest - 1);
-  console.log(limit);
+  console.log(binarySearch(0, maxRequest - 1));
 }
