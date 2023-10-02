@@ -1,3 +1,5 @@
+// [BOJ] 11047. 동전 0
+
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().split("\n");
 
