@@ -1,3 +1,5 @@
+// [BOJ] 1463. 1로 만들기
+
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString();
 
