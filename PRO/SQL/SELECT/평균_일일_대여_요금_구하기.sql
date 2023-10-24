@@ -1,0 +1,5 @@
+SELECT ROUND(AVG(DAILY_FEE)) AS AVERAGE_FEE
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE CAR_TYPE = 'SUV';
+
+--ROUND(숫자, 반올림할 자릿수): 숫자를 반올림할 자릿수+1 자릿수에서 반올림
