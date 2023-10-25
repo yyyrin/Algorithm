@@ -1,0 +1,6 @@
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME
+LIMIT 1;
+
+-- LIMIT + n(수): 맨 위에서부터 n개까지의 정보 조회
