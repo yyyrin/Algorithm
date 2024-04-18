@@ -1,20 +1,24 @@
 function solution(n, lost, reserve) {
-  let student = new Array(n + 1).fill(1);
-  student[0] = 0;
-  reserve.forEach((num) => student[num]++);
-  lost.forEach((num) => student[num]--);
+  let arr = new Array(n + 1).fill(1);
 
-  student.forEach((e, idx) => {
-    if (idx > 0 && e < 1) {
-      if (student[idx - 1] === 2) {
-        student[idx - 1]--;
-        student[idx]++;
-      } else if (student[idx + 1] === 2) {
-        student[idx + 1]--;
-        student[idx]++;
+  reserve.forEach((e) => arr[e]++); // 여벌 체육복 가져온 학생
+  lost.forEach((e) => arr[e]--); // 체육복 도난당한 학생
+
+  for (let i = 1; i <= arr.length; i++) {
+    // 체육복이 없는 경우
+    if (arr[i] === 0) {
+      // 앞 번호 학생이 여벌 체육복이 있는 경우
+      if (arr[i - 1] === 2) {
+        arr[i - 1]--;
+        arr[i]++;
+      }
+      // 뒷 번호 학생이 여벌 체육복이 있는 경우
+      else if (arr[i + 1] === 2) {
+        arr[i + 1]--;
+        arr[i]++;
       }
     }
-  });
+  }
 
-  return student.filter((e) => e > 0).length;
+  return arr.filter((e) => e >= 1).length - 1;
 }
